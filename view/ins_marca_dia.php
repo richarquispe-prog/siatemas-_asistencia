@@ -2,13 +2,13 @@
 //para marcar asistencia
 require_once ("../model/conexion.php");
 date_default_timezone_set('America/Lima');
-$codigo = $_POST['codigo']; //empleado
+$codigo = $_POST['codigo']; //estudiante
 $marca = $_POST['marca']; //puede ser entrada o salida E ó S
 $fecha=date('Y-m-d');
 $hora=date("H:i:s");
 $hnull=NULL;
-$sql0 = mysqli_query($conexion, "SELECT * FROM estudiantes WHERE codigo='$codigo'");
-//consultar si existe empleado
+$sql0 = mysqli_query($conexion, " SELECT * FROM estudiantes WHERE codigo='$codigo'");
+//consultar si existe estudiante
 $nombre="";
 if(mysqli_num_rows($sql0)> 0){
 	$row0 = mysqli_fetch_assoc($sql0);
@@ -17,7 +17,7 @@ if(mysqli_num_rows($sql0)> 0){
     $nombre=$row0['nombres'];
 
 $sql1 = mysqli_query($conexion, "SELECT * FROM marcas WHERE codigo='$codigo' AND fecha='$fecha'");
-//consultar si existe empleado
+//consultar si existe estudiante
 if(mysqli_num_rows($sql1)> 0){
 
 	$row = mysqli_fetch_assoc($sql1);
@@ -45,11 +45,11 @@ if(mysqli_num_rows($sql1)> 0){
 }else {
 //si no hay registro de marcs en la fecha actual, inserta
  if($marca=='E'){
-		$q_ins="INSERT INTO marcas(id,codigo, fecha, hora_e) ";
+		$q_ins="INSERT INTO marcas(id,codigo,fecha, hora_e) ";
 		$tipo_marc=" MARCA ENTRADA A LAS ";
 	}
 	else {
-		$q_ins="INSERT INTO marcas(id,codigo, fecha, hora_s) ";
+		$q_ins="INSERT INTO marcas(id,codigo,fecha, hora_s) ";
 		$tipo_marc=" MARCA SALIDA A LAS ";
 	}
 	$q_ins.=" VALUES(DEFAULT,'$codigo','$fecha', '$hora')";

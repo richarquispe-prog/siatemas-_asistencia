@@ -78,7 +78,7 @@ date_default_timezone_set('America/Lima');
                             </div>
                         <div class="col-lg-6 col-12">
                             <div class="input-group mt-2">
-                                <span class="input-group-text text-light" id="basic-addon1" style="background-color:#325288;">Codigo de estudiante:</span>
+                                <span class="input-group-text text-light" id="basic-addon1" style="background-color:#325288;">Codigo de Asignatura:</span>
                                 <input type="text" class="form-control" name="codigo" id="codigo" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
