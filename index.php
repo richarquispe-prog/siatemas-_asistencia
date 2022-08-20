@@ -23,7 +23,7 @@
 
                 <div class="col-lg-5 offset-lg-3">
                     <div class="card text-white bg-success">
-                        <p align="center"><strong>assistance system</strong> </p>
+                        <p align="center"><strong>SISTEMA DE ASISTENCIA</strong> </p>
                         <div class="card-body" align="center">
                             <img class="img-fluid" src="./img/epis.png" height="200px" width="200px" alt="Title">
                         </div>

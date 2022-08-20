@@ -2,7 +2,7 @@
 //aqui se hace el agregar
 //primero hacemos la conexion con la base de datos 
 require_once ("../model/conexion.php");
-//csmr
+
 //aqui agarramos por post todos los datos
 if(!empty($_POST)){
     $codigo = mysqli_real_escape_string($con,$_POST["codigo"]);
