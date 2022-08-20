@@ -6,7 +6,7 @@ include("head.php");
 include("leftmenu.php");
 //nos traemos las cosas de horario
 $sql0="SELECT id, hora_e_sem, hora_s_sem, hora_e_fd, hora_s_fd FROM horario";
-$res0 = mysqli_query($con, $sql0);
+$res0 = mysqli_query($conexion, $sql0);
 $row0 = mysqli_fetch_assoc($res0);
 ?>
 
@@ -32,7 +32,7 @@ $row0 = mysqli_fetch_assoc($res0);
 				$filter = 1;
 				if($filter){
 					//aqui es para mostrar a los empleados
-					$sql = mysqli_query($con, "SELECT * FROM marcas WHERE fecha = CURDATE()");
+					$sql = mysqli_query($conexion, "SELECT * FROM marcas WHERE fecha = CURDATE()");
 				}
 
 				if(mysqli_num_rows($sql) == 0){
@@ -44,7 +44,7 @@ $row0 = mysqli_fetch_assoc($res0);
 						// lo siguiente es para el menu de acciones, de aqui se muestra en una tabla
 						// la hora de entrada, salida, si está en la empresa o no, etc.
 						$codigo = $row['codigo'];
-						$query = mysqli_query($con, "SELECT * FROM empleados WHERE codigo='$codigo'");
+						$query = mysqli_query($conexion, "SELECT * FROM estudiantes WHERE codigo='$codigo'");
 						while($nom = mysqli_fetch_assoc($query)){
 							if($nom['estado'] == 1){
 								$activo = $nom['disponible'] != 0 ? 'Sí' : 'No';

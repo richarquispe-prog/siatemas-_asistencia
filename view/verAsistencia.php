@@ -4,7 +4,7 @@ include("funciones.php");
 $fechai = fecha_ymd($_REQUEST['fechai']);
 $fechaf=fecha_ymd($_REQUEST['fechaf']);
 $sql_e="SELECT  * FROM empleados";
-$res_e = mysqli_query($con, $sql_e);
+$res_e = mysqli_query($conexion, $sql_e);
 if(mysqli_num_rows($res_e) == 0){
 	echo '<tr><td colspan="8">No hay datos.</td></tr>';
 }else{
@@ -60,7 +60,7 @@ function diasTrab($codigo,$fechai,$fechaf){
 	include("conexion.php");
 	//include("funciones.php");
 	$diasTrab=0;
-	$sql = mysqli_query($con, "SELECT * FROM marcas
+	$sql = mysqli_query($conexion, "SELECT * FROM marcas
 		 WHERE codigo='$codigo'
 		 AND fecha BETWEEN '$fechai' AND '$fechaf'");
 		 while($row = mysqli_fetch_assoc($sql)){
@@ -80,7 +80,7 @@ function cuenta_salidas_entradas($codigo,$fechai,$fechaf){
 	$sql1="SELECT m.codigo,m.fecha,m.hora_e,m.hora_s FROM marcas AS m
 	WHERE    m.codigo='$codigo'
 	AND m.fecha BETWEEN '$fechai' AND  '$fechaf'";
-	$res= mysqli_query($con, $sql1);
+	$res= mysqli_query($conexion, $sql1);
 
 	//funcion que obtieNe los objetos Datetime y retorna la observacion
 	//si hubo llegads tardes o salidas temprano

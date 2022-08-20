@@ -13,11 +13,11 @@ $row0 = mysqli_fetch_assoc($res0);
 //aqui se traen el codigo, el nombre del empleado, la hora en que marco entrada
 //la hora que marco la salida, donde el codigo sea igual al codigo que se selecciono
 //tambien que me traiga las marcar desde la fecha que ingreso el usuario a la fecha de fin
-$sql1="SELECT e.codigo,e.nombres,m.fecha,m.hora_e,m.hora_s FROM empleados AS e,marcas AS m
+$sql1="SELECT e.codigo,e.nombres,m.fecha,m.hora_e,m.hora_s FROM estudiantes AS e,marcas AS m
 WHERE e.codigo='$codigo'
 AND  e.codigo= m.codigo
 AND m.fecha BETWEEN '$fechai' AND  '$fechaf'";
-$sql = mysqli_query($con, $sql1);
+$sql = mysqli_query($conexion, $sql1);
 
 if(mysqli_num_rows($sql) == 0){
 	//en caso que no haya datos

@@ -7,7 +7,7 @@ include("funciones.php");
 
 $fechai=date('d-m-Y');
 $fechaf=date('d-m-Y');
-$sql = mysqli_query($con, "SELECT * FROM empleados");
+$sql = mysqli_query($conexion, "SELECT * FROM estudiantes");
 
 if(mysqli_num_rows($sql) >0){
 
@@ -53,11 +53,11 @@ if(mysqli_num_rows($sql) >0){
 				<!--ya aqui mostramos todos los datos dentro del rango de fecha-->
 				<thead>
 					<tr>
-						<th>No</th>
+						<th>N<sup>o</sup></th>
 						<th>Código</th>
-						<th>Nombre Empleado</th>
+						<th>Nombre Estudiante</th>
 						<!--th>Fecha</th-->
-						<th>Dias trabajados</th>
+						<th>Dias asistidos</th>
 						<th>Llegadas tardes</th>
 						<th>Salida Temprana</th>
 						<th>Observacion</th>

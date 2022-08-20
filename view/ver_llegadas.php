@@ -6,7 +6,7 @@ include("funciones.php");
 $codigo= $_GET['codigo'];
 $fechai=date('d-m-Y');
 $fechaf=date('d-m-Y');
-$sql = mysqli_query($con, "SELECT * FROM empleados WHERE codigo='$codigo'");
+$sql = mysqli_query($conexion, "SELECT * FROM estudiantes WHERE codigo='$codigo'");
 $nombre='';
 if(mysqli_num_rows($sql) >0){
 	$row = mysqli_fetch_assoc($sql);//aqui nos da un array asociativo
@@ -16,8 +16,8 @@ if(mysqli_num_rows($sql) >0){
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 <div class="tab-content flex-grow-1 ms-3" id="v-tabs-tabContent">
 	<div class='row'>
-		<h3>Buscar por Empleado y Rango de Fechas</h3>
-		<h3>Empleado:<?php echo strtoupper($nombre)?></h3>
+		<h3>Buscar por Estudiante y Rango de Fechas</h3>
+		<h3>Estudiante:<?php echo strtoupper($nombre)?></h3>
 		<input type='hidden' value='<?php echo $codigo?>' id='codigo' name='codigo' />
 		<!--aqui le pedimos las fechas-->
 		<div class="col-sm-4">
@@ -53,7 +53,7 @@ if(mysqli_num_rows($sql) >0){
 				<!--ya aqui mostramos todos los datos dentro del rango de fecha-->
 				<thead>
 					<tr>
-						<th>No</th>
+						<th>N<sup>o</sup></th>
 						<th>Código</th>
 						<th>Fecha</th>
 						<th>Hora Entrada</th>
