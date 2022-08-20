@@ -37,7 +37,7 @@ include("agregar.php");
         <textarea name="direccion" class="form-control" placeholder="Dirección" required></textarea>  
       </div>
       <div class="container mb-3 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-6 ">
-        <input type="text" name="puesto" class="form-control" placeholder="Puesto" required>
+        <input type="text" name="puesto" class="form-control" placeholder="Ciclo" required>
       </div>
       <div class="container mb-3 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8 col-xxl-6 ">
           <label class="control-label">Tipo de usuario:</label>

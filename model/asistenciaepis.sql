@@ -46,9 +46,7 @@ CREATE TABLE `estudiantes` (
 
 INSERT INTO `estudiantes` (`codigo`, `nombres`, `dui`, `direccion`, `telefono`, `puesto`, `estado`, `tipo`, `contrasenia`, `disponible`) VALUES
 ('ADMIN', 'Super acceso', '12345678', 'xxx', '87654321', 'Master edition', 1, 1, 'd033e22ae348aeb5660fc2140aec35850c4da997', 0);
-INSERT INTO 'estudiantes' VALUES ('2019141031', 'Richar Quispe Quincho', '71582051', 'xxxxxxxx', '98563214', 'Estudiante', 1, 1, '2019141031', 1), 
-('2019141032', 'Juan Edison Ramos Ñahui', '76254263', 'xxxxxxxx', '98563252', 'Estudiante', 1, 1, '2019141032', 1), 
-('2019141040', 'Micky Sanchez Navarro', '71254632', 'xxxxxxxx', '71254632', 'Estudiante', 1, 1, '2019141040', 1)
+
 
 -- --------------------------------------------------------
 
