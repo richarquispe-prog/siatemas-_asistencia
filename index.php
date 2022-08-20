@@ -56,22 +56,19 @@
                                         </div>
                                         <img src="./img/sistemas.png">
                                         <div class="modal-body">
-                                            <form method="post" action="./Controller/logestudent.php" class="adm_login"
+                                            <form method="post" action="./controller/logestudent.php" class="estudent_login"
                                                 autocomplete="on">
 
                                                 <div class=" txt_field">
                                                     <input name="email" type="number" required class="form-control"
                                                         id="exampleInputEmail1" placeholder="ingrese su codigo institucional">
                                                     <span></span>
-                                                    <label for="exampleInputEmail1" class="form-label">Codigo </label>
                                                 </div>
-
+                                                <br>
                                                 <div class="mb-3 txt_field">
                                                     <input name="password" type="password" required class="form-control"
-                                                        id="exampleInputPassword1">
+                                                        id="exampleInputPassword1" placeholder="Ingrese contraseña">
                                                     <span></span>
-                                                    <label for="exampleInputPassword1"
-                                                        class="form-label">Contraseña</label>
                                                 </div>
 
                                                 <div class="modal-footer contraseña">
