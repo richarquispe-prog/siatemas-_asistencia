@@ -15,8 +15,9 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
+<link rel="stylesheet" href="../assets/style.css">
 
-<body class="p-3 mb-3 bg-white" style="background-image: url(./img/verde1.png);line-height: 1; ">
+<body class="p-3 mb-3 bg-white" style="background-image: url(../img/verde1.png);line-height: 1; ">
     <div class="conteiner mt-5">
         <div class="container-fluid">
             <div class="row">
@@ -25,7 +26,7 @@
                     <div class="card text-white bg-success">
                         <p align="center"><strong>SISTEMA DE ASISTENCIA</strong> </p>
                         <div class="card-body" align="center">
-                            <img class="img-fluid" src="./img/epis.png" height="200px" width="200px" alt="Title">
+                            <img class="img-fluid" src="../img/epis.png" height="200px" width="200px" alt="Title">
                         </div>
                         <div class="card-body" align="center">
                             <!-- Button trigger modal -->
@@ -54,9 +55,9 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <img src="./img/sistemas.png">
+                                        <img src="../img/sistemas.png">
                                         <div class="modal-body">
-                                            <form method="post" action="./controller/logestudent.php" class="estudent_login"
+                                            <form method="post" action="logestudent.php" class="estudent_login"
                                                 autocomplete="on">
 
                                                 <div class=" txt_field">
@@ -98,9 +99,9 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <img src="./img/sistemas.png">
+                                        <img src="../img/sistemas.png">
                                         <div class="modal-body">
-                                            <form method="POST" action="./controller/logadmin.php" class="adm_login"
+                                            <form method="POST" action="logadmin.php" class="adm_login"
                                                 autocomplete="on">
 
                                                 <div class=" txt_field">

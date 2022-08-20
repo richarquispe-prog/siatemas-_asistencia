@@ -9,22 +9,22 @@
 		//USUARIO: ADMIN
 		//CONTRA: admin
 		if(!empty($_POST)) {
-			$usuario = mysqli_real_escape_string($conexion, $_POST['email_']);
-			$encriptar = mysqli_real_escape_string($conexion, $_POST['password_']);
+			$usuario = mysqli_real_escape_string($conexion, $_POST['email']);
+			$encriptar = mysqli_real_escape_string($conexion, $_POST['password']);
 			$contrasenia = sha1($encriptar);
-			$consulta = "SELECT * FROM estudiantes WHERE codigo = '$usuario' AND contrasenia = '$contrasenia' AND tipo = '1' AND estado = '1'";
+			$consulta = "SELECT * FROM estudiantes WHERE codigo = '$usuario' AND contrasenia = '$contrasenia' AND tipo = '0' AND estado = '1'";
 			$resultado = $conexion -> query($consulta);
 			$filas = $resultado -> num_rows;
 			if($filas > 0){
 				$fila = $resultado -> fetch_assoc();
-				$_SESSION['id_empleado'] = $fila["codigo"];
+				$_SESSION['codigo'] = $fila["codigo"];
 				// si no inicia sesion que lo mande al index
 		
-				if(!isset($_SESSION['id_empleado'])){
+				if(!isset($_SESSION['codigo'])){
 					header("Location: index.php ");
 				}else{
 					//si no que lo mande a reporte de empleado
-					header("Location: ../view/reporteEmp.php");
+					header("Location: reporteEmp.php");
 				}
 			}else{
 				$mensaje = 'usuario o contrasenia incoreccto';
@@ -33,6 +33,3 @@
 			}
 		}
 ?>
-
-$correo = $_POST['email_'];//llama correo y se guarda en la variable
-		$Pass = $_POST['password_'];

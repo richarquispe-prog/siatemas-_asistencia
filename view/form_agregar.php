@@ -2,10 +2,10 @@
 
 <?php
 //se mandan a llamar lo que nesecitamos
+session_start();
 include("head.php");
-include("../includes/head.php");
 
-include("../includes/leftmenu.php");
+include("leftmenu.php");
 include("agregar.php");
 
 ?>

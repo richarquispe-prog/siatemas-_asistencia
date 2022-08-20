@@ -1,8 +1,10 @@
 <?php
 //reporte por intervalo de fechas
+session_start();
+
 include("head.php");
 include("leftmenu.php");
-include("conexion.php");
+require_once ("../model/conexion.php");
 include("funciones.php");
 
 $fechai=date('d-m-Y');

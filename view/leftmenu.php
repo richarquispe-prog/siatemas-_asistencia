@@ -8,7 +8,7 @@ role="tablist"
 aria-orientation="vertical"
 >
 	<!--EN EL HREF PONDRAN SU PAGINA PHP DE CADA COSA-->
-	<a href="../controller/agregar.php" class="nav-link my-4 text-light btn-lg" tabindex="-1" role="button" > Agregar Estudiantes</a>
+	<a href="form_agregar.php" class="nav-link my-4 text-light btn-lg" tabindex="-1" role="button" > Agregar Estudiantes</a>
 	<a href="reporteEmp.php" class="nav-link my-4 text-light btn-lg" tabindex="-1" role="button" >	Lista de Estudiantes</a>
 	<a href="asistencia.php" class="nav-link my-4 text-light btn-lg" tabindex="-1" role="button" >	Estudiantes Activos</a>
 	<a href="reporteDiario.php" class="nav-link my-4 text-light btn-lg" tabindex="-1" role="button" >	Reporte diaro</a>

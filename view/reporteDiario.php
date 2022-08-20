@@ -1,7 +1,8 @@
 <?php
 //aqui es el reporte diario
-include("conexion.php");
+require_once ("../model/conexion.php");
 include("funciones.php");
+session_start();
 include("head.php");
 include("leftmenu.php");
 //nos traemos las cosas de horario

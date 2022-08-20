@@ -6,9 +6,9 @@ if (!isset($_SESSION['user']) ){
 }*/
 
 include ('../model/conexion.php');
-include("../includes/head.php");
+include("head.php");
 
-include("../includes/leftmenu.php");
+include("leftmenu.php");
 ?>
 
 <!--ESTE ES PARA EL MENU DESPLEGABLE-->
@@ -106,7 +106,7 @@ include("../includes/leftmenu.php");
 	</div>	
 </div>
 
-<?php include_once ("../includes/foot.php");?>
+<?php include_once ("foot.php");?>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
