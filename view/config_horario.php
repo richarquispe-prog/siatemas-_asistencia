@@ -68,14 +68,90 @@ function inicio(){
 			</form>
 	</div>
 	<?php include_once ("foot.php");?>
-	<script src="js/config_horario.js"></script>
+	<script src="../js/config_horario.js"></script>
 	<?php
 }
 //aqui es cuando de click en guardar
+function guardar(){
+	require_once ("../model/conexion.php");
+	//variable para validar si hay espacios en blanco
+	$validar=true;
+	//si la hora de entrada esta vacia
+	$hora_ent1=$_POST['hora_ent1'];
+	if ($hora_ent1=='') {
+		$validar=false;
+	}
+	//si el miuto de entrada esta vacio
+	$min_ent1=$_POST['min_ent1'];
+	if ($min_ent1=='') {
+		$validar=false;
+	}
+	//si la hora de salida esta vacia
+	$hora_sal1=$_POST['hora_sal1'];
+	if ($hora_sal1=='') {
+		$validar=false;
+	}
+	//si el minuto de salida esta vacia
+	$min_sal1=$_POST['min_sal1'];
+	if ($min_sal1=='') {
+		$validar=false;
+	}
+	//si la hora de entrada del fin de esta vacia
+	$hora_ent2=$_POST['hora_ent2'];
+	if ($hora_ent2=='') {
+		$validar=false;
+	}
+	//si el minti;p de entrada del fin de semana esta vacia
+	$min_ent2=$_POST['min_ent2'];
+	if ($min_ent2=='') {
+		$validar=false;
+	}
+	//si la hora de salida del fin de semana esta vacia
+	$hora_sal2=$_POST['hora_sal2'];
+	if ($hora_sal2=='') {
+		$validar=false;
+	}
+	//si el minuto de salida del fin de semana esta vacia
+	$min_sal2=$_POST['min_sal2'];
+	if ($min_sal2=='') {
+		$validar=false;
+	}
+	$hesem=$hora_ent1.":".$min_ent1.":00";
+	$hssem=$hora_sal1.":".$min_sal1.":00";
+	$hefd=$hora_ent2.":".$min_ent2.":00";
+	$hsfd=$hora_sal2.":".$min_sal2.":00";
+	//si no hay espacios en blanco se modifica en la tabla horario
+	$q="UPDATE  horario
+		SET hora_e_sem='$hesem',
+		hora_s_sem=	'$hssem',
+		hora_e_fd='$hefd',
+		hora_s_fd='$hsfd'";
+	if ($validar==false) {
+		//aqui valida si hay algun espacio vacio
+		$datos["mensaje"]="revise que las casillas de horario no esten vacias!";
+	}else{
+		//si no hay vacio se hace esto
+	$update = mysqli_query($conexion,$q ) or die(mysqli_error());
 
+	if($update){
+		$datos["mensaje"]="Horario Actualizado";
+	}else {
+		$datos["mensaje"]="Horario no pudo ser Actualizado!";
+	}}
+	echo json_encode($datos);
+}
 if (!isset($_REQUEST['process'])){
 	inicio();
 }
 
-
+if (isset($_REQUEST['process'])) {
+	switch ($_REQUEST['process']) {
+	case 'inicio':
+			inicio();
+		break;
+		case 'guardar':
+				guardar();
+			break;
+	}
+}
 ?>

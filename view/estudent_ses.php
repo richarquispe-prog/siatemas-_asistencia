@@ -1,8 +1,7 @@
 <?php
 //aqui es el index principal, donde se hace la asistencia 
 //y el login si es administrador
-include("conexion.php");
-include("login.php");
+require_once ("../model/conexion.php");
 
 date_default_timezone_set('America/Lima');
 ?>
