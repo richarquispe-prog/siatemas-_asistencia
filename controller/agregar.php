@@ -5,14 +5,14 @@ require_once ("../model/conexion.php");
 
 //aqui agarramos por post todos los datos
 if(!empty($_POST)){
-    $codigo = mysqli_real_escape_string($con,$_POST["codigo"]);
-    $nombres = mysqli_real_escape_string($con,$_POST["nombres"]);
-    $dui = mysqli_real_escape_string($con,$_POST["dui"]);
-    $direccion = mysqli_real_escape_string($con,$_POST["direccion"]);
-    $telefono = mysqli_real_escape_string($con,$_POST["telefono"]);
-    $puesto = mysqli_real_escape_string($con,$_POST["puesto"]);    
-    $tipo = mysqli_real_escape_string($con,$_POST["tipo"]);
-    $encriptar = mysqli_real_escape_string($con,$_POST["pass"]);
+    $codigo = mysqli_real_escape_string($conexion,$_POST["codigo"]);
+    $nombres = mysqli_real_escape_string($conexion,$_POST["nombres"]);
+    $dui = mysqli_real_escape_string($conexion,$_POST["dui"]);
+    $direccion = mysqli_real_escape_string($conexion,$_POST["direccion"]);
+    $telefono = mysqli_real_escape_string($conexion,$_POST["telefono"]);
+    $puesto = mysqli_real_escape_string($conexion,$_POST["puesto"]);    
+    $tipo = mysqli_real_escape_string($conexion,$_POST["tipo"]);
+    $encriptar = mysqli_real_escape_string($conexion,$_POST["pass"]);
     $pass = sha1(strval($encriptar));
     //aqui validamos si el codigo ya existe
     if($codigo != $_SESSION['id_empleado']){
