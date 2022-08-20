@@ -24,7 +24,7 @@ $row0 = mysqli_fetch_assoc($res0);
 					<th>No</th>
 					<th>Nombre</th>
 					<th>Hora de llegada</th>
-					<th>Dentro de la empresa</th>
+					<th>Dentro de la asignatura</th>
 					<th>Hora Salida</th>
 					<th>Observacion</th>
 				</tr>

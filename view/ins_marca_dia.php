@@ -1,6 +1,6 @@
 <?php
 //para marcar asistencia
-include("conexion.php");
+require_once ("../model/conexion.php");
 date_default_timezone_set('America/Lima');
 $codigo = $_POST['codigo']; //empleado
 $marca = $_POST['marca']; //puede ser entrada o salida E ó S
@@ -28,7 +28,7 @@ if(mysqli_num_rows($sql1)> 0){
 	//para marcar entrada
 	if($marca=='E'){
 		$update = mysqli_query($conexion, "UPDATE marcas SET hora_e='$hora' WHERE codigo='$codigo' AND fecha='$fecha'") or die(mysqli_error());
-		$update1 = mysqli_query($conexion, "UPDATE `empleados` SET `disponible` = '1' WHERE `codigo` = '$codigo'");
+		$update1 = mysqli_query($conexion, "UPDATE `estudiantes` SET `disponible` = '1' WHERE `codigo` = '$codigo'");
 		$tipo_marc=" MARCA ENTRADA A LAS ";
 	}
 	//para marcar salida
